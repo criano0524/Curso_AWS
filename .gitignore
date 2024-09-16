@@ -1,8 +1,8 @@
-.cache
-.donet
-.ssh
-.vscode-server
-.flask_app
+.cache/
+.donet/
+.ssh/
+.vscode-server/
+.flask_app/
 .bash_logout
 .bashrc
 .profile

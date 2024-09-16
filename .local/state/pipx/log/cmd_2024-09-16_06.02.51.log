@@ -1,0 +1,58 @@
+   205.5ms (setup:858): 2024-09-16 06:02:51
+   205.7ms (setup:859): /usr/bin/pipx install some-python-application
+   205.7ms (setup:860): pipx version is 1.4.3
+   205.8ms (setup:861): Default python interpreter is '/usr/bin/python3'
+   205.8ms (mkdir:74): creating directory /home/ubuntu/.local/share/pipx/venvs
+   205.9ms (mkdir:74): creating directory /home/ubuntu/.local/bin
+   206.0ms (mkdir:74): creating directory /home/ubuntu/.local/share/man
+   206.0ms (mkdir:74): creating directory /home/ubuntu/.cache/pipx
+   206.1ms (setup:870): Adding CACHEDIR.TAG to cache directory
+   207.4ms (package_name_from_spec:370): Determined package name: some-python-application
+   207.5ms (package_name_from_spec:371): Package name determined in 0.0s
+   208.4ms (run_subprocess:168): running /usr/bin/python3 -m venv --without-pip /home/ubuntu/.local/share/pipx/venvs/some-python-application
+   257.0ms (run_subprocess:190): stdout:
+   257.1ms (run_subprocess:192): stderr:
+   257.2ms (run_subprocess:193): returncode: 0
+   257.8ms (run_subprocess:168): running /usr/bin/python3 -m venv --clear /home/ubuntu/.local/share/pipx/shared
+  3111.3ms (run_subprocess:190): stdout:
+  3111.5ms (run_subprocess:192): stderr:
+  3111.5ms (run_subprocess:193): returncode: 0
+  3112.1ms (run_subprocess:168): running <checking pip's availability>
+  3129.4ms (run_subprocess:190): stdout: ModuleSpec(name='pip', loader=<_frozen_importlib_external.SourceFileLoader object at 0x798604fffef0>, origin='/home/ubuntu/.local/share/pipx/shared/lib/python3.12/site-packages/pip/__init__.py', submodule_search_locations=['/home/ubuntu/.local/share/pipx/shared/lib/python3.12/site-packages/pip'])
+  3129.6ms (run_subprocess:193): returncode: 0
+  3129.7ms (upgrade:98): Upgrading shared libraries in /home/ubuntu/.local/share/pipx/shared
+  3130.2ms (run_subprocess:168): running /home/ubuntu/.local/share/pipx/shared/bin/python -m pip --no-input --disable-pip-version-check install --force-reinstall -q --upgrade pip >= 23.1
+  4831.2ms (run_subprocess:190): stdout:
+  4831.4ms (run_subprocess:192): stderr:
+  4831.4ms (run_subprocess:193): returncode: 0
+  4831.7ms (run_subprocess:168): running /home/ubuntu/.local/share/pipx/venvs/some-python-application/bin/python -c import sysconfig; print(sysconfig.get_path('purelib'))
+  4851.7ms (run_subprocess:190): stdout: /home/ubuntu/.local/share/pipx/venvs/some-python-application/lib/python3.12/site-packages
+  4851.8ms (run_subprocess:193): returncode: 0
+  4852.0ms (run_subprocess:168): running /home/ubuntu/.local/share/pipx/shared/bin/python -c import sysconfig; print(sysconfig.get_path('purelib'))
+  4867.2ms (run_subprocess:190): stdout: /home/ubuntu/.local/share/pipx/shared/lib/python3.12/site-packages
+  4867.3ms (run_subprocess:193): returncode: 0
+  4867.6ms (run_subprocess:168): running /home/ubuntu/.local/share/pipx/venvs/some-python-application/bin/python --version
+  4868.9ms (run_subprocess:190): stdout: Python 3.12.3
+  4869.0ms (run_subprocess:192): stderr:
+  4869.1ms (run_subprocess:193): returncode: 0
+  4869.3ms (_parsed_package_to_package_or_url:137): cleaned package spec: some-python-application
+  4869.8ms (run_subprocess:168): running /home/ubuntu/.local/share/pipx/venvs/some-python-application/bin/python -m pip --no-input install some-python-application
+  5319.7ms (run_subprocess:193): returncode: 1
+  5320.4ms (subprocess_post_check_handle_pip_error:327): '/home/ubuntu/.local/share/pipx/venvs/some-python-application/bin/python -m pip --no-input install some-python-application' failed
+  5320.6ms (subprocess_post_check_handle_pip_error:342): Fatal error from pip prevented installation. Full pip output in file:
+    /home/ubuntu/.local/state/pipx/log/cmd_2024-09-16_06.02.51_pip_errors.log
+  5322.3ms (rmdir:55): removing directory /home/ubuntu/.local/share/pipx/venvs/some-python-application
+  5323.0ms (cli:924): PipxError: Error installing some-python-application.
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/pipx/main.py", line 921, in cli
+    return run_pipx_command(parsed_pipx_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pipx/main.py", line 219, in run_pipx_command
+    return commands.install(
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pipx/commands/install.py", line 91, in install
+    venv.install_package(
+  File "/usr/lib/python3/dist-packages/pipx/venv.py", line 254, in install_package
+    raise PipxError(f"Error installing {full_package_description(package_name, package_or_url)}.")
+pipx.util.PipxError: Error installing some-python-application.
+  5328.1ms (cli:932): pipx finished.
