@@ -1,5 +1,0 @@
-    91.9ms (setup:858): 2024-09-16 06:03:47
-    92.0ms (setup:859): /usr/bin/pipx ensurepath
-    92.0ms (setup:860): pipx version is 1.4.3
-    92.0ms (setup:861): Default python interpreter is '/usr/bin/python3'
-   221.6ms (cli:932): pipx finished.
